@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Online Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>ShopEasy</h1>
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <button onclick="goToCart()">Cart (<span id="cartCount">0</span>)</button>
+    </header>
+
+    <main>
+        <div id="productList" class="products"></div>
+        <div id="cartPage" class="cart hidden">
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <h3>Total: $<span id="totalAmount">0.00</span></h3>
+            <button onclick="checkout()">Proceed to Checkout</button>
+        </div>
+
+        <div id="checkoutPage" class="checkout hidden">
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <input type="text" id="name" placeholder="Your Name" required /><br/>
+                <input type="text" id="address" placeholder="Delivery Address" required /><br/>
+                <input type="email" id="email" placeholder="Email" required /><br/>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+
+        <div id="orderHistoryPage" class="order-history hidden">
+            <h2>Order History</h2>
+            <div id="orderList"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
